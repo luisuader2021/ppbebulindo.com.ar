@@ -1,0 +1,378 @@
+body{margin:0;
+background-color: #E9FCD6;
+text-align: center !important;}
+
+.menu{height: 90px;
+width:100%;
+background-image: url('../images/bm2.jpg');
+background-size: contain;
+background-repeat: repeat-x;
+position: fixed;
+top:0;
+z-index:4;
+}
+
+.menu div, .menu a{background-size: contain;}
+
+.menu .logo{position: absolute;
+top:17px;
+left: 8.6px;
+display: block;
+width: 139px;
+height: 41px;
+background-image: url('../images/logo.webp');}
+
+.menu .mari{position: absolute;
+top:54px;
+left:90.6px;
+width: 25px;
+height: 25.6px;
+background-image: url('../images/blb2.webp');}
+
+.menu .buho{position: absolute;
+top:5px;
+left:125.3px;
+width: 25.3px;
+height: 26px;
+background-image: url('../images/blbu2.webp');}
+
+.menu .mrp{position: absolute;
+top:54px;
+left:160px;
+width: 95px;
+height: 15px;
+background-image: url('../images/mrp2.webp');}
+.prod{
+    width:93%;
+    vertical-align: middle !important;
+    clear: none !important;
+    float: none !important;
+    display: inline-block;
+    zoom: 1 !important;
+    box-sizing: border-box !important;
+    font-family: "Times new roman";
+
+}
+@media screen and (min-width:600px) {
+ .prod{width:49%;}
+}
+@media screen and (min-width:1200px) {
+ .prod{width:30%;}
+}
+
+.prod .d1{border:1px solid #88EE88;
+    border-radius:9px;
+    margin:5px;
+    overflow:hidden;
+    position: relative;
+    background-color: #EBFFDF;
+}
+
+.prod .d1 img{width: 100%}
+
+.prod .d1 .info{
+    text-align: left;
+    font-size:18px;
+    font-weight: bold;
+    color:#45932F;
+    padding: 8px;
+    position: relative;
+}
+.prod .d1 .info h1{
+	display:none;
+}
+.prod .d1 .cod{
+    font-size: 0.7em;
+    position: absolute;
+    bottom:8px;
+    left: 8px;
+}
+
+.prod .d1 .wsp{
+position: absolute;
+    
+height: 25px;
+bottom: 0px;
+left: calc(50% - 68px);
+background-color: rgba(50,50,50,0.05);
+background-image: url('../images/wsp.png');
+background-size: 28px;
+background-position: 4px 3px;
+background-repeat: no-repeat;
+padding: 8px 8px 0 35px;
+font-style: italic;
+font-size:0.8em;
+border-radius: 12px 12px 0 0;
+z-index: 3;
+text-decoration: none;
+color:#45932F;
+}
+.prod .d1 .wsp:focus{
+background-color: rgba(50,50,50,0.1);
+}
+
+.prod .d1 .wsp:hover{
+background-color: rgba(50,50,50,0.2);
+}
+
+
+.prod .d1 .info b{
+    display: block;
+    position: absolute;
+	top:-17px;
+	left: 4px;
+	font-style: italic;
+	font-size: 0.6em;
+	text-shadow: 0 0 2px #fff;
+	color:#335F21;
+}
+
+.prod .d1 .info b span{
+font-size: 0.3em;
+}
+
+
+.prod .d1 .info .precio{
+    text-align: right;
+    font-size: 1.3em;
+	padding:0 6px 0px 0;
+}
+
+
+.prod .d1 .info .talle{
+    position:absolute;
+    top:-20px;
+    right:0px;
+    background-color:#EBFFDF;
+    border:4px 0 0 4px solid rgba(235,255,223,0.4);
+    border-radius: 10px 0 0 0;
+    height: 15px;
+    padding:2px 7px 0 9px;
+}
+
+.prod .d1 .info .talle span{
+font-size: 0.7em;
+
+}
+
+
+
+
+.prod .d2{position: absolute;
+width: 100%;
+height: 100%;
+box-shadow: inset 0 0 10px rgba(200,230,200,1);
+z-index: 1;
+border-radius:9px;
+}
+.esp1{width:1px; height:110px;}
+
+.nadaquever{
+    font-size: 1.4em;
+     font-style: italic;
+    background-image: url('../images/cartelito.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 300px;
+    padding-top: 380px;
+}
+
+.buhito{
+    margin:auto;
+    width: 250px;
+}
+
+.solCat{
+display: inline-block;
+margin:auto;
+background-color: rgba(50,50,50,0.05);
+background-image: url('../images/wsp.png');
+background-size: 28px;
+background-position: 14px 14px;
+background-repeat: no-repeat;
+padding: 20px 20px 20px 48px;
+font-style: italic;
+font-size:1em;
+border-radius: 15px;
+text-decoration: none;
+color:#45932F;
+border: 1px solid rgba(50,50,50,0.2);;
+}
+.solCat:focus{
+background-color: rgba(50,50,50,0.1);
+}
+
+.solCat:hover{
+background-color: rgba(50,50,50,0.2);
+}
+
+.noved{
+    margin:auto;
+    width: 350px;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+    /*---------------------------------------cambios-----------------------------------------------*/
+
+    
+
+    .menu{height: 123px;
+        width:100%;
+        background-image: url('../images/bm2.jpg');
+        background-size: contain;
+        background-repeat: repeat-x;
+        position: fixed;
+        top:0;
+        z-index:4;
+        }
+
+        .esp1 {
+            width: 1px;
+            height: 130px;
+        }
+
+
+        .menu .logo{position: absolute;
+            top:31px;
+            left: 46.6px;
+            display: block;
+            width: 159px;
+            height: 108px;
+            background-image: url('../images/logo.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+
+
+        .menu .mari{position: absolute;
+            top:78x;
+            left:90.6px;
+            width: 25px;
+            height: 25.6px;
+            background-image: url('../images/blb2.webp');}
+            
+            .menu .buho{position: absolute;
+            top:10x;
+            left:125.3px;
+            width: 31px;
+            height: 32px;
+            background-image: url('../images/blbu2.webp');
+            background-size: contain;
+        }
+            
+            .menu .mrp{position: absolute;
+            top:54px;
+            left:160px;
+            width: 95px;
+            height: 15px;
+            background-image: url('../images/mrp2.webp');}
+
+
+            .search-container {
+                position:absolute;
+                display:flex;
+                top: 37px;
+                right: 28px;
+                width: 400px;
+            }
+            
+            .search-input {
+                padding: 10px;
+                border: none;
+                border-radius: 5px 0 0 5px;
+                width: 70%;
+                font-size: 16px;
+            }
+            
+            .search-button {
+                padding: 10px;
+                border: none;
+                border-radius: 0 5px 5px 0;
+                width: 30%;
+                background-color: #4CAF50;
+                color: #fff;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            
+            /* Hover effect on the button */
+            .search-button:hover {
+                background-color: #45a049;
+            }
+
+
+
+            .menuhorizontal {
+                font-family: 'Akaya Telivigala';
+                font-size: 30px;
+                overflow: hidden;
+              }
+          
+              .menuhorizontal ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+              }
+          
+              .menuhorizontal li {
+                float: left;
+                
+              }
+          
+              .menuhorizontal li a, .menuhorizontal .dropbtn {
+                display: inline-block;
+                color: #88A765;
+                background-color: #E9FCD6;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                
+              }
+          
+              .menuhorizontal li a:hover, .menuhorizontal .dropdown:hover .dropbtn {
+                color: #51643b;
+                
+              }
+          
+              .menuhorizontal .dropdown {
+                display: inline-block;
+                
+              }
+          
+              .menuhorizontal .dropdown-content {
+                display: none;
+                position: absolute;
+                font-size: 20px;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                z-index: 1;
+                
+              }
+          
+              .menuhorizontal .dropdown-content a {
+                color: #88A765;
+                padding: 12px 16px;
+                display: block;
+                text-align: left;
+                border-radius: 15px; /*agregue borde rodondeado*/
+                
+              }
+          
+              .menuhorizontal .dropdown-content a:hover {
+                background-color:#aec299;
+                
+              }
+          
+              .menuhorizontal .dropdown:hover .dropdown-content {
+                display: block;
+                border-radius: 15px; /*agregue borde rodondeado*/
+               
+              }
