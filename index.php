@@ -50,7 +50,27 @@
     </ul>
   </div>
 
-
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
+<div style="width: 300px;height: 300px; border: 1px solid #000; margin: 50px;"></div>
 <!-- Formulario con menú desplegable    style="  width: 180px; 
     height: 35px; "   -->
 <form id="myForm">

@@ -1,3 +1,4 @@
+
 body{margin:0;
 background-color: #E9FCD6;
 text-align: center !important;}
@@ -221,7 +222,7 @@ background-color: rgba(50,50,50,0.2);
 
 
     /*---------------------------------------cambios-----------------------------------------------*/
-
+  
     
 
     .menu{height: 123px;
@@ -232,6 +233,7 @@ background-color: rgba(50,50,50,0.2);
         position: fixed;
         top:0;
         z-index:4;
+        transition: 0.15s; 
         }
 
         .esp1 {
@@ -240,81 +242,88 @@ background-color: rgba(50,50,50,0.2);
         }
 
 
-        .menu .logo{position: absolute;
-            top:31px;
-            left: 46.6px;
+        .menu .logo{
+            position: absolute;
+            top:6px;
+            left: 5%;
             display: block;
-            width: 159px;
-            height: 108px;
-            background-image: url('../images/logo.webp');
-            background-size: contain;
+            width: 155px;
+            height: 106px;
+            background-image: url('../images/logo.png');           
             background-repeat: no-repeat;
+            background-size: 155px;
+            transition: 0.15s; 
         }
 
 
 
-        .menu .mari{position: absolute;
-            top:78x;
-            left:90.6px;
-            width: 25px;
-            height: 25.6px;
-            background-image: url('../images/blb2.webp');}
-            
-            .menu .buho{position: absolute;
-            top:10x;
-            left:125.3px;
-            width: 31px;
-            height: 32px;
-            background-image: url('../images/blbu2.webp');
-            background-size: contain;
-        }
+        
             
             .menu .mrp{position: absolute;
-            top:54px;
-            left:160px;
-            width: 95px;
-            height: 15px;
-            background-image: url('../images/mrp2.webp');}
-
+            top:62px;
+            left:calc(5% + 180px);
+            width: 169px;
+            height: 26px;
+            background-image: url('../images/mrp2.webp');
+            background-repeat: no-repeat;
+            background-size: contain;
+            
+          }
+          @media screen and (max-width: 630px) {
+            .menu .mrp {
+              display: none; /* Ocultar el elemento si el ancho de la pantalla es menor a ... */
+            }
+          }
 
             .search-container {
                 position:absolute;
                 display:flex;
                 top: 37px;
-                right: 28px;
-                width: 400px;
+                right: 4%;
+                width: 30%;
+                opacity: 0.8;
+                transition: 0.15s; 
             }
+           
             
             .search-input {
-                padding: 10px;
-                border: none;
-                border-radius: 5px 0 0 5px;
-                width: 70%;
-                font-size: 16px;
+              padding: 10px;
+              border: 1px solid #88A765;
+              box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.1);
+              border-radius: 8px;
+              width: 100%;
+              font-size: 16px;
+              outline: none;
+            }
+            .search-input:focus {
+              border: 1px solid #4d6d2a;
+
             }
             
             .search-button {
-                padding: 10px;
-                border: none;
-                border-radius: 0 5px 5px 0;
-                width: 30%;
-                background-color: #4CAF50;
-                color: #fff;
+                position: absolute;                
+                width: 30px;
+                height: 30px;
+                background-image: url('../images/lupita5.svg');        
+                background-repeat: no-repeat;        
+                background-size: cover;
                 cursor: pointer;
-                font-size: 16px;
+                border:inherit;
+                top:5px;
+                right:5px;
+                             
+
             }
             
-            /* Hover effect on the button */
-            .search-button:hover {
-                background-color: #45a049;
-            }
-
+          
 
 
             .menuhorizontal {
                 font-family: 'Akaya Telivigala';
                 font-size: 30px;
                 overflow: hidden;
+                width: 100%;
+
               }
           
               .menuhorizontal ul {

@@ -3,6 +3,7 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+	<meta name="theme-color" content="#E9FCD6">
 	<title>Bebulindo</title>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,16 +58,39 @@ Analytics"></a></div></noscript>
 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0" nonce="z9bA3n3S"></script>
-	
+
 <div class="menu">
 	<a class="logo"></a>
-	<div class="mari" ></div>
-	<div class="buho" ></div>
 	<div class="mrp" ></div>
 	<div class="search-container">
         <input type="text" class="search-input" placeholder="Buscar...">
-        <button class="search-button">Buscar</button>
+        <button class="search-button"></button>
     </div>
 
 </div>
+
 <div class="esp1"></div>
+<script>
+    // JavaScript para cambiar el estilo al hacer scroll
+    document.addEventListener('scroll', function() {
+      var header = document.querySelector('.menu');
+      var busqueda = document.querySelector('.search-container');
+      var logo = document.querySelector('.menu .logo');
+      var slogan=document.querySelector('.menu .mrp');
+      var scrollPosition = window.scrollY;
+
+      if (scrollPosition > 50) {
+        header.style.height = '60px';
+        busqueda.style.top = '9px';
+        logo.style.height ='45px';
+        logo.style.backgroundPosition = '0 -30px';
+        slogan.style.display = 'none';
+      } else {
+        header.style.height = '123px';
+        busqueda.style.top = '37px';
+        logo.style.height ='106px';
+        logo.style.backgroundPosition = '0 0';
+        
+      }
+    });
+  </script>
