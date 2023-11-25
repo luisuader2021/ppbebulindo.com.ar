@@ -1,5 +1,5 @@
     
-<?php include 'includes/head.php';?>
+<?php include '../includes/head.php';?>
 
 
 </head>
@@ -43,11 +43,21 @@
        <li class="dropdown">
         <a href="#" class="dropbtn">Prematuros</a>
         <div class="dropdown-content">
-          <a href="http://bebulindo.com.ar/ar/remera">conjuntos</a>
-          <a href="#">musculosas</a>
-          <a href="#">bermudas</a>
+          <a href="http://bebulindo.com.ar/lista/ConjuntosBa">conjuntos con batita</a>
+          <a href="http://bebulindo.com.ar/lista/ConjuntosBo">conjuntos con body</a>
+       
         </div>
       </li>
+
+
+	<li class="dropdown">
+        <a href="#" class="dropbtn">RN</a>
+        <div class="dropdown-content">
+          <a href="http://bebulindo.com.ar/lista/ConjuntosRN">conjuntos</a>
+          <a href="http://bebulindo.com.ar/lista/BodysRN">bodys ml</a>
+        </div>
+      </li>
+
 
 
       <li class="dropdown">
@@ -78,9 +88,9 @@
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
-    <div class="swiper-slide"><img src="images/pasador/imagen3.webp"/></div>
-    <div class="swiper-slide"><img src="images/pasador/imagen2.webp"/></div>
-    <div class="swiper-slide"><img src="images/pasador/imagen1.webp"/></div>    
+    <div class="swiper-slide"><img src="../images/pasador/imagen3.webp"/></div>
+    <div class="swiper-slide"><img src="../images/pasador/imagen2.webp"/></div>
+    <div class="swiper-slide"><img src="../images/pasador/imagen1.webp"/></div>    
   </div>
   <!-- If we need pagination -->
   <div class="swiper-pagination"></div>

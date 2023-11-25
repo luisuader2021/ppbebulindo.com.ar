@@ -362,7 +362,7 @@ background-color: rgba(50,50,50,0.2);
                 position: absolute;
                 font-size: 20px;
                 box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-                z-index: 1;
+                z-index:20;
                 
               }
           
@@ -385,3 +385,15 @@ background-color: rgba(50,50,50,0.2);
                 border-radius: 15px; /*agregue borde rodondeado*/
                
               }
+
+
+              .slider {
+                  display: flex;
+                  transition: transform 0.5s ease-in-out;
+                  touch-action: pan-y;
+                }
+
+                img {
+                  width: 100%;
+                  height: auto;
+                }

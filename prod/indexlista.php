@@ -1,4 +1,4 @@
-<?php include '../includes/head2.php';?>
+<?php include '../includes/head.php';?>
 <?php include '../includes/conexion.php';?>
 <?php
 $busqueda= " AND venta = 0";
@@ -11,25 +11,21 @@ $vueltas=0;
 
 
 if(isset($_GET["str"]) and $_GET["str"] === "RemerasN" )
-  {$busqueda.=" AND or_arr = '14' AND categ1 = 'N' AND nro_pren = '1' 
+  {$busqueda.=" AND or_arr = '14' AND categ1 = 'N' AND tbase >=4 AND nro_pren = '1' 
 AND LOCATE('9',nro_temp) = 0 
-order by   nro desc";
+order by   nro ";
  $sinbus=0;  $titulo="REMERAS PARA NIÑOS";}
 
 
-
-
 if(isset($_GET["str"]) and $_GET["str"] === "MusculosasN" )
-  {$busqueda.=" AND or_arr = '14' AND categ1 = 'N' AND nro_pren = '1' 
+  {$busqueda.=" AND or_arr = '15' AND categ1 = 'N' AND tbase >=4  AND nro_pren = '1' 
 AND LOCATE('9',nro_temp) = 0 
-order by   nro desc";
+order by   nro ";
  $sinbus=0;  $titulo="MUSCULOSAS PARA NIÑOS";}
 
 
-
-
 if(isset($_GET["str"]) and $_GET["str"] === "BermudasN" )
-  {$busqueda.=" AND or_arr = '14' AND categ1 = 'N' AND nro_pren = '1' 
+  {$busqueda.=" AND or_aba = '27' AND categ1 = 'N' AND tbase >=4  AND nro_pren = '1' 
 AND LOCATE('9',nro_temp) = 0 
 order by   nro desc";
  $sinbus=0;  $titulo="BERMUDAS PARA NIÑOS";}
@@ -41,28 +37,23 @@ order by   nro desc";
 
 
 if(isset($_GET["str"]) and $_GET["str"] === "BodysB" )
-  {$busqueda.=" AND or_arr = '12' AND categ1 = 'B' AND nro_pren = '1'   
+  {$busqueda.=" AND or_arr = '12' AND categ1 = 'B' AND tbase >0  AND codigo <> 4003 AND nro_pren = '1'   
 AND LOCATE('9',nro_temp) = 0 
-order by   nro desc";
+order by  tbase desc, nro desc ";
  $sinbus=0;  $titulo="BODYS PARA BEBES";}
 
 
 
-
-
 if(isset($_GET["str"]) and $_GET["str"] === "MusculosasB" )
-  {$busqueda.=" AND or_arr = '12' AND categ1 = 'B' AND nro_pren = '1'   
+  {$busqueda.=" AND or_arr = '15' AND categ1 = 'B' AND tbase >0 AND nro_pren = '1'   
 AND LOCATE('9',nro_temp) = 0 
-order by   nro desc";
+order by   nro ";
  $sinbus=0;  $titulo="MUSCULOSAS PARA BEBES";}
 
 
 
-
-
-
 if(isset($_GET["str"]) and $_GET["str"] === "ShortsB" )
-  {$busqueda.=" AND or_arr = '12' AND categ1 = 'B' AND nro_pren = '1'   
+  {$busqueda.=" AND or_aba = '28' AND categ1 = 'B' AND tbase >0 AND nro_pren = '1'   
 AND LOCATE('9',nro_temp) = 0 
 order by   nro desc";
  $sinbus=0;  $titulo="SHORTS PARA BEBES";}
@@ -75,13 +66,38 @@ order by   nro desc";
 
 
 
-
-
-
-if(isset($_GET["str"]) and $_GET["str"] === "RemerasP" )
-  {$busqueda.=" AND or_arr = '14' AND categ1 = 'N' AND nro_pren = '1' AND LOCATE('9',nro_temp) = 0 
+if(isset($_GET["str"]) and $_GET["str"] === "ConjuntosRN" )
+  {$busqueda.=" AND or_arr = '11' AND categ1 = 'B' AND tbase = 0
+   AND nro_pren > 1  AND LOCATE('9',nro_temp) = 0 
 order by   nro desc";
- $sinbus=0;  $titulo="REMERAS PARA PREMATUROS";}
+ $sinbus=0;  $titulo="CONJUNTOS PARA RECIEN NACIDO";}
+
+
+
+if(isset($_GET["str"]) and $_GET["str"] === "BodysRN" )
+  {$busqueda.=" AND or_arr = '11' AND categ1 = 'B' AND tbase = 0 AND codigo <> 15
+   AND nro_pren = 1  AND LOCATE('9',nro_temp) = 0 
+order by   nro desc";
+ $sinbus=0;  $titulo="BODYS MANGA LARGAS RN";}
+
+
+
+
+
+if(isset($_GET["str"]) and $_GET["str"] === "ConjuntosBa" )
+  {$busqueda.=" AND or_arr = '16' AND categ1 = 'B' AND ordEdad < '-1'
+   AND nro_pren > 1  AND LOCATE('9',nro_temp) = 0 
+order by   nro desc";
+ $sinbus=0;  $titulo="CONJUNTOS PARA PREMATUROS";}
+
+
+
+
+if(isset($_GET["str"]) and $_GET["str"] === "ConjuntosBo" )
+  {$busqueda.=" AND or_arr = '11' AND categ1 = 'B' AND ordEdad < '-1'
+   AND nro_pren > 1  AND LOCATE('9',nro_temp) = 0 
+order by   nro desc";
+ $sinbus=0;  $titulo="CONJUNTOS PARA PREMATUROS";}
 
 
 
@@ -90,15 +106,6 @@ order by   nro desc";
 
 
 
-
-
-
-
-if(isset($_GET["str"]) and $_GET["str"] === "chinita" )
-  {$busqueda.=" AND articulo LIKE 'remera'
-order by cat desc, ordEdad";
-
-$sinbus=0;  $titulo="REMERAS PARA NIÑOS";}
 
 
 

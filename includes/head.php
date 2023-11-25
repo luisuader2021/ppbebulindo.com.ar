@@ -12,11 +12,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Andada+Pro&display=swap" rel="stylesheet">
 
 
-<link rel="stylesheet" type="text/css" href="css/estilos.css?v=<?echo rand()?>"></link>
+<link rel="stylesheet" type="text/css" href="../../tienda/css/estilos.css?v=<?echo rand()?>"></link>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163385724-1"></script>
 
 <meta property="og:image" content="http://bebulindo.com.ar/images/logoblog.jpg">
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 
 <?php
