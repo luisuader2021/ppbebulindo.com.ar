@@ -12,6 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Andada+Pro&display=swap" rel="stylesheet">
 
 
+ 
+
+<!--  favicon -->
+<link rel="icon" type="image/png" href="../../tienda/images/icono.png">
+
+
 <link rel="stylesheet" type="text/css" href="../../tienda/css/estilos.css?v=<?echo rand()?>"></link>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163385724-1"></script>
@@ -62,14 +68,52 @@ Analytics"></a></div></noscript>
 <script src="../js/librerias.js?v=<?php echo(rand());?>" type="text/javascript"></script>
 <script src="../js/borrar.js?v=<?php echo(rand());?>" type="text/javascript"></script>
 
+
+   <!-- funcion buscar palabra clave con la lupa o enter -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Manejar el evento de tecla "Enter" en el campo de búsqueda
+            $('.search-input').on('keyup', function(event) {
+                if (event.keyCode === 13) {
+                    realizarBusqueda();
+                }
+            });
+
+            // Manejar el evento de clic en el botón de búsqueda
+            $('.search-button').on('click', function() {
+                realizarBusqueda();
+            });
+
+            // Función para realizar la búsqueda y redirección
+            function realizarBusqueda() {
+                var searchTerm = $('.search-input').val().toLowerCase();
+
+                // Realizar la redirección basada en la palabra clave ingresada
+                if (searchTerm !== "") {
+                    var newURL = "http://bebulindo.com.ar/art/" + searchTerm;
+                    window.location.href = newURL;
+                }
+            }
+        });
+    </script>
+
+
+
 </head>
+
+
+
+
 <body>
 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0" nonce="z9bA3n3S"></script>
 
+
+<!-- menu y buscador  -->
 <div class="menu">
-	<a class="logo"></a>
+	<a href="https://bebulindo.com.ar/tienda/home/" class="logo"></a>
 	<div class="mrp" ></div>
 	<div class="search-container">
         <input type="text" class="search-input" placeholder="Buscar...">
@@ -77,6 +121,11 @@ Analytics"></a></div></noscript>
     </div>
 
 </div>
+
+
+
+
+
 
 <div class="esp1"></div>
 <script>

@@ -87,7 +87,7 @@ order by   nro desc";
 if(isset($_GET["str"]) and $_GET["str"] === "ConjuntosBa" )
   {$busqueda.=" AND or_arr = '16' AND categ1 = 'B' AND ordEdad < '-1'
    AND nro_pren > 1  AND LOCATE('9',nro_temp) = 0 
-order by   nro desc";
+order by   nro ";
  $sinbus=0;  $titulo="CONJUNTOS PARA PREMATUROS";}
 
 
@@ -151,10 +151,12 @@ if($sinbus===0){
 $consulta_prod ="SELECT * FROM stock WHERE id_prod > 0".$busqueda;
 $resultado_prod = mysqli_query( $conexion, $consulta_prod ) or die ( "<div class='nadaquever'>Algo ha ido mal en la consulta a la base de datos</div>");
  
+
+
 while ($producto= mysqli_fetch_array( $resultado_prod))
   {
 
-  $palabra="Me Interesa"; 
+  $palabra="Comprar"; 
   include '../includes/whileprod.php';
   }
 

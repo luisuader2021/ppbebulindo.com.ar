@@ -320,7 +320,7 @@ background-color: rgba(50,50,50,0.2);
 
             .menuhorizontal {
                 font-family: 'Akaya Telivigala';
-                font-size: 30px;
+                font-size: 20px;
                 overflow: hidden;
                 width: 100%;
 
@@ -396,4 +396,33 @@ background-color: rgba(50,50,50,0.2);
                 img {
                   width: 100%;
                   height: auto;
+                }
+
+
+
+                .prod .d1 .buy{
+                position: absolute;
+                    
+                height: 25px;
+                bottom: 0px;
+                left: calc(50% - 68px);
+                background-color: rgba(50,50,50,0.05);
+                background-image: url('../images/buy.png');
+                background-size: 28px;
+                background-position: 4px 3px;
+                background-repeat: no-repeat;
+                padding: 8px 8px 0 35px;
+                font-style: italic;
+                font-size:0.8em;
+                border-radius: 12px 12px 0 0;
+                z-index: 3;
+                text-decoration: none;
+                color:#45932F;
+                }
+                .prod .d1 .buy:focus{
+                background-color: rgba(50,50,50,0.1);
+                }
+
+                .prod .d1 .buy:hover{
+                background-color: rgba(50,50,50,0.2);
                 }
