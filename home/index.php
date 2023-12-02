@@ -4,14 +4,7 @@
 
 </head>
 
-
- 
 </head>
-
-
-
-
-
 
 
 <body>
@@ -188,73 +181,62 @@
 
 
 
-     <!-- Botón para la buequeda   
-  
-   
-     <script>
-        // Función que redirige a la página seleccionada
-        function redirigir() {
-            // Obtener el valor seleccionado del menú desplegable
-            var selectedValue = document.getElementById("categoria").value;
+<!-- Footer  - redes sociales e informacion contacto -->
 
-            // Redirigir a la página correspondiente
-            if (selectedValue === "#") {
-                // No hacer nada o redirigir a una página por defecto
-            } else {
-                //window.open(selectedValue + ".html", "_blank");
-               //window.location.href = selectedValue + ".html"; // Puedes ajustar la extensión o la ruta según tus necesidades
-               // Combina la URL base con el valor seleccionado
-                 var newURL = "http://bebulindo.com.ar/art/" + selectedValue;
+    <footer>
+        <div class="footer-content">
+            <!-- Columna de redes sociales -->
+            <div class="column">
+                <h3>Redes Sociales</h3>
 
-                // Redirige a la nueva URL en la misma ventana o pestaña
-                window.location.href = newURL;
-              // window.open("http://bebulindo.com.ar/art/" + selectedValue ); // página web + value
-            }
-        }
-    </script>
+               
 
+                <a href="https://www.facebook.com/bebulindo/" class="reds"><img width="50%" style="max-width: 35px" 
+              src="../../tienda/images/logof.png"/></a>
+            <a class="tifbi"  href="https://www.facebook.com/bebulindo/"><b></a>
+            
+                <a href="https://www.instagram.com/unbebulindo/" class="reds"><img width="50%" style="max-width: 35px" 
+              src="../../tienda/images/logoi.png"/></a>
+              <a class="tifbi"  href="https://www.instagram.com/unbebulindo/"><b></a>  
+            </div>
+            
+            <!-- Columna de información de contacto -->
+            <div class="column">
+    <h3>Contacto</h3>
+    <p><i class="fas fa-phone"></i>  <a href="https://wa.me/543436209824" target="_blank">+54 343 6209824</a></p>
 
--->
+    <p><i class="fas fa-envelope"></i> <a href="mailto:unbebulindo@gmail.com">unbebulindo@gmail.com</a></p>
 
-<!-- 
-  
-
-          Formulario con menú desplegable    
-                  style="  width: 180px; 
-                  height: 35px; "   
-
-
-
-<form id="myForm">
-    <a class="titbu"><b></b>Buscar Artículos que contengan: <br><br>
-
-      
-    <select id="categoria" name="Buscar" onchange="redirigir()">
     
+</div>
+
+        </div>
         
-        <option value="remera">remeras</option>
-        <option value="musculosa">musculosas</option>
-        <option value="short">shorts</option>
-        <option value="bermuda">bermudas</option>
-        <option value="buzo">buzos</option>
-        <option value="campera">camperas</option>
-        <option value="chaleco">chalecos</option>
+
+         
+        <!-- Derechos Reservados -->
+        <div class="rights">
+            <p>&copy; 2023 Bebulindo. Todos los derechos reservados.</p>
+        </div>
+
+
+
+        <div class="whatsapp-icon">
+    <a href="https://api.whatsapp.com/send?phone=5493436209824&text=Información">
+        <img class="custom-icon" src="../../tienda/images/wsp.png" alt="Icono wsp">
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
         
-   
-    </select>
-
-</a>
-
-</form>
--->
-
-
-
-
-
-
-
-
+    </footer>
 
 
 </body>

@@ -382,7 +382,7 @@ background-color: rgba(50,50,50,0.2);
           
               .menuhorizontal .dropdown:hover .dropdown-content {
                 display: block;
-                border-radius: 15px; /*agregue borde rodondeado*/
+                border-radius: 15px; /*agregue borde redondeado*/
                
               }
 
@@ -426,3 +426,86 @@ background-color: rgba(50,50,50,0.2);
                 .prod .d1 .buy:hover{
                 background-color: rgba(50,50,50,0.2);
                 }
+
+
+                      /* footer - redes sociales e informacion contacto */
+
+                      footer {
+                        background-color: #333;
+                        color: white;
+                        padding: 20px;
+                        text-align: center;
+                        /*position: fixed;*/
+                        position: relative;
+                        margin-top: 20px; /*  cualquier valor  */
+
+                        width: 100%;
+                        bottom: 0;
+                    }
+                    
+                    .footer-content {
+                        display: flex;
+                        justify-content: center;
+                    }
+                    
+                    .column {
+                        margin: 0 20px;
+                    }
+                    
+                    .column h3 {
+                        color: #fff;
+                    }
+
+                    .column a {
+                      color: green; 
+                      text-decoration: none; /* Elimina el subrayado */
+                  }
+                  
+                  .column p a {
+                    color: green; 
+                    text-decoration: none; /* Elimina el subrayado */
+                }
+                
+                    
+                    .social-media a {
+                        color: #fff;
+                        text-decoration: none;
+                        display: block;
+                        margin-bottom: 5px;
+                    }
+                    
+                    .contact-info p {
+                        margin: 5px 0;
+                    }
+                    
+                    .rights {
+                        margin-top: 20px;
+                    }
+
+                    .whatsapp-icon {
+                      position: fixed; /* Posición fija */
+                      bottom: 20px; /* Distancia desde la parte inferior */
+                      right: 20px; /* Distancia desde la derecha */
+                      /*background-color: #25D366; /* Color de fondo del botón de WhatsApp */
+                      padding: 10px; /* Espaciado interno */
+                      border-radius: 50%; /* Para hacer un círculo */
+                      cursor: pointer;
+                      display: flex;
+                      align-items: center;
+                      width: 50px; /* Ajusta el tamaño según tus necesidades */
+                      height: 50px;
+                  }
+                  
+                  .icon {
+                      fill: #fff; /* Color del ícono */
+                      width: 24px; /* Ajusta el tamaño según tus necesidades */
+                      height: 24px;
+                      margin-right: 5px; /* Espacio entre el icono y el texto, ajusta según sea necesario */
+
+                    }
+
+                    .custom-icon img {
+                      width: 32px; /* Ajusta el tamaño según tus necesidades */
+                      height: 32px;
+                      margin-top: 10px; /* Ajusta el margen superior según tus necesidades */
+                  }

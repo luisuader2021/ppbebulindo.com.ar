@@ -16,7 +16,8 @@
 
 <!--  favicon -->
 <link rel="icon" type="image/png" href="../../tienda/images/icono.png">
-
+<!--  íconos de la biblioteca Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 <link rel="stylesheet" type="text/css" href="../../tienda/css/estilos.css?v=<?echo rand()?>"></link>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -62,14 +63,51 @@ Analytics"></a></div></noscript>
 
  <?php
 }
+//inicio carrito
+
+session_start();
+
+// Inicializar el carrito si no existe
+if (!isset($_SESSION['carrito'])) {
+    $_SESSION['carrito'] = array();
+}
+
+// Función para calcular la cantidad total de artículos en el carrito
+function calcularCantidadArticulos() {
+    return count($_SESSION['carrito']);
+}
+
+// Función para calcular el monto total en el carrito
+function calcularMontoTotal() {
+    $montoTotal = 0;
+    foreach ($_SESSION['carrito'] as $producto) {
+        $montoTotal += $producto['precio'];
+    }
+    return $montoTotal;
+}
+
+//fin carrito
+
+
+
+
+
+
+
+
+
+
+
 
  ?>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
-<script src="../js/librerias.js?v=<?php echo(rand());?>" type="text/javascript"></script>
-<script src="../js/borrar.js?v=<?php echo(rand());?>" type="text/javascript"></script>
+
+<script src="../../tienda/js/borrar.js?v=<?php echo(rand());?>" type="text/javascript"></script>
 
 
-   <!-- funcion buscar palabra clave con la lupa o enter -->
+
+   <!-- implementación de la barra de búsqueda para filtrar por productos -->
+
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -87,17 +125,19 @@ Analytics"></a></div></noscript>
 
             // Función para realizar la búsqueda y redirección
             function realizarBusqueda() {
-                var searchTerm = $('.search-input').val().toLowerCase();
+                var searchTerm = $('.search-input').val().trim().toLowerCase();
 
-                // Realizar la redirección basada en la palabra clave ingresada
-                if (searchTerm !== "") {
+                // Verificar que la palabra tenga más de tres letras
+                if (searchTerm.length >= 3) {
+                    // Realizar la redirección basada en la palabra clave ingresada
                     var newURL = "http://bebulindo.com.ar/art/" + searchTerm;
                     window.location.href = newURL;
+                } else {
+                    alert("Por favor, ingresa una palabra de al menos tres letras.");
                 }
             }
         });
     </script>
-
 
 
 </head>
