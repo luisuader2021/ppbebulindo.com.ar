@@ -1,2 +1,0 @@
-Los siguientes archivos serán ignorados por git;
-desktop.ini
