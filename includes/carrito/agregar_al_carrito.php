@@ -30,6 +30,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 }
 
 // Redireccionar de nuevo a la página principal
-header('Location: index.php');
+header('Location: mostrar_carrito.php');
 exit();
 ?>

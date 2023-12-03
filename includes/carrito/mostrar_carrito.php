@@ -50,7 +50,7 @@ function calcularMontoTotal() {
     if (!empty($_SESSION['carrito'])) {
         echo '<ul>';
         foreach ($_SESSION['carrito'] as $productoCarrito) {
-            echo '<li>' . $productoCarrito['nombre'] . ' - $' . $productoCarrito['precio'] . ' - <a href="quitar_del_carrito.php?id=' . $productoCarrito['id'] . '">Quitar</a></li>';
+            echo '<li>'. $productoCarrito['id'] .': '. $productoCarrito['nombre'] . ' - $' . $productoCarrito['precio'] . ' - <a href="quitar_del_carrito.php?id=' . $productoCarrito['id'] . '">Quitar</a></li>';
         }
         echo '</ul>';
     } else {
