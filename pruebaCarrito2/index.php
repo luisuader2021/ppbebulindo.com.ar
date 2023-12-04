@@ -12,65 +12,16 @@
     </style>
 </head>
 <body>
+    <p>linea</p><p>linea</p><p>linea</p><p>linea</p><p>linea</p><p>linea</p><p>linea</p><p>linea</p><p>lineas para probar que la página no recargó</p><p>linea</p><p>linea</p><p>linea</p><p>linea</p><p>linea</p><p>linea</p><p>linea</p>
     <h2>Tienda</h2>
-<!--
-    <?php
-    session_start();
 
-    // Inicializar el carrito en la sesión si no existe
-    if (!isset($_SESSION['carrito'])) {
-        $_SESSION['carrito'] = [];
-    }
-
-    // Función para agregar un artículo al carrito
-    function agregarAlCarrito($id, $nombre, $monto) {
-        $_SESSION['carrito'][] = ['id' => $id, 'nombre' => $nombre, 'monto' => $monto];
-    }
-
-    // Función para quitar un artículo del carrito
-    function quitarDelCarrito($id) {
-        foreach ($_SESSION['carrito'] as $key => $producto) {
-            if ($producto['id'] == $id) {
-                unset($_SESSION['carrito'][$key]);
-                break;
-            }
-        }
-    }
-
-    // Verificar si se envió una solicitud AJAX
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
-        // Verificar si la acción es agregar al carrito
-        if ($_POST['accion'] === 'agregarAlCarrito') {
-            $productoId = $_POST['productoId'];
-            $productoNombre = $_POST['productoNombre'];
-            $productoPrecio = $_POST['productoPrecio'];
-
-            agregarAlCarrito($productoId, $productoNombre, $productoPrecio);
-
-            // Responder con un mensaje de éxito
-            echo json_encode(['mensaje' => 'Producto agregado al carrito']);
-            exit;
-        }
-        // Verificar si la acción es quitar del carrito
-        elseif ($_POST['accion'] === 'quitarDelCarrito') {
-            $productoId = $_POST['productoId'];
-
-            quitarDelCarrito($productoId);
-
-            // Responder con un mensaje de éxito
-            echo json_encode(['mensaje' => 'Producto quitado del carrito']);
-            exit;
-        }
-    }
-    ?>
--->
     <!-- Producto 1 -->
     <div id="producto1">
         <h3>Producto A</h3>
         <p>Precio: $25.99</p>
         <button onclick="agregarAlCarrito(1, 'Producto A', 25.99)">Agregar al carrito</button>
-        <button onclick="quitarDelCarrito(1)">Quitar del carrito</button>
-        <div class="mensaje-agregado" style="display:none;">Producto agregado al carrito</div>
+        <button style="display:none;" onclick="quitarDelCarrito(1)">Quitar del carrito</button>
+        <div class="mensaje-agregado"style="display:none">Producto agregado al carrito</div>
     </div>
 
     <!-- Producto 2 -->
@@ -78,7 +29,7 @@
         <h3>Producto B</h3>
         <p>Precio: $19.99</p>
         <button onclick="agregarAlCarrito(2, 'Producto B', 19.99)">Agregar al carrito</button>
-        <button onclick="quitarDelCarrito(2)">Quitar del carrito</button>
+        <button style="display:none;" onclick="quitarDelCarrito(2)">Quitar del carrito</button>
         <div class="mensaje-agregado" style="display:none;">Producto agregado al carrito</div>
     </div>
 
@@ -97,12 +48,7 @@
                     productoPrecio: monto
                 },
                 success: function(response) {
-                    // Mostrar mensaje de éxito
-                    var mensaje = $('#producto' + id + ' .mensaje-agregado');
-                    mensaje.show();
-                    setTimeout(function() {
-                        mensaje.hide();
-                    }, 3000);  // Ocultar el mensaje después de 3 segundos
+                    actualizarBotonesCarrito();
                 },
                 error: function(error) {
                     console.error('Error al agregar al carrito:', error);
@@ -120,20 +66,57 @@
                     productoId: id
                 },
                 success: function(response) {
-                    // Mostrar mensaje de éxito
-                    var mensaje = $('#producto' + id + ' .mensaje-agregado');
-                    mensaje.text('Producto quitado del carrito');
-                    mensaje.css('color', 'red');
-                    mensaje.show();
-                    setTimeout(function() {
-                        mensaje.hide();
-                    }, 3000);  // Ocultar el mensaje después de 3 segundos
+                    actualizarBotonesCarrito();
                 },
                 error: function(error) {
                     console.error('Error al quitar del carrito:', error);
                 }
             });
         }
+
+
+
+ 
+        // Función para actualizar el estado de los botones
+        function actualizarBotonesCarrito() {
+            // Realizar una solicitud AJAX al servidor
+            $.ajax({
+                type: 'POST',
+                url: 'verificar_carrito.php',
+                dataType: 'json',
+                success: function(response) {
+                    // Actualizar los botones en función del estado del carrito
+                    response.forEach(function(producto) {
+                        var id = producto.id;
+                        var botonAgregar = $('#producto' + id + ' button:first-of-type');
+                        var botonQuitar = $('#producto' + id + ' button:last-of-type');
+
+                        if (producto.enCarrito) {
+                            // El producto está en el carrito
+                            botonAgregar.hide();
+                            botonQuitar.show();
+                        } else {
+                            // El producto no está en el carrito
+                            botonAgregar.show();
+                            botonQuitar.hide();
+                        }
+                    });
+                },
+                error: function(error) {
+                    console.error('Error al actualizar botones del carrito:', error);
+                }
+            });
+        }
+$(document).ready(function() {
+        // Llamar a la función al cargar la página para actualizar los botones
+        actualizarBotonesCarrito();
+    });
+
+
+
+
+
+
     </script>
 </body>
 </html>
