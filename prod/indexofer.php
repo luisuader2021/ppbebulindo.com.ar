@@ -8,9 +8,7 @@ $vueltas = 0;
 
 
 
-// titulo  
 
-echo "<h3> " . $titulo . " </h3><br>";
 
 
 
@@ -24,6 +22,13 @@ if (isset($_GET["str"]) and $_GET["str"] === "semanal") {
     $sinbus = 0;
     $titulo = "Ofertas de la Semana";
 }
+
+
+
+// titulo  
+
+echo "<h3 class='titulito' > " .$titulo. " </h3><br>";
+
 
 
 //funcion codigo-articulo

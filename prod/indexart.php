@@ -6,9 +6,6 @@ $sinbus = 1;    // busqueda
 $vueltas = 0;
 
 
-// titulo  
-
-echo "<h3>  Mostrando los artículos que contienen: " . $_GET["art"] . "</h3></div></div></div></div>";
 
 
 
@@ -23,6 +20,11 @@ if (isset($_GET["art"]) and strlen($_GET["art"]) > 1) {
 }
 
 
+
+
+// titulo  
+
+echo "<h3 class='titulito' >  Mostrando los artículos que contienen: ".$_GET["art"]. "</h3><br>";
 
 
 
