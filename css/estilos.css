@@ -390,16 +390,42 @@ background-color: rgba(50,50,50,0.2);
 
 
               .swiper {
-                width: 100%;
+                width: calc(100%);
       
       
               }
-      
+
+
+              .swiper-wrapper {
+                  
+                  max-width: calc(33.33% - 14.8px); /*  Tamaño inicial para pantallas muy anchas, ajusta según tus necesidades */
+                  /*Se podría agregar una version de 4 o 5 cuadros para pantallas mayores pero deberia haber 5 imagenes*/
+                }
+
+                /* Media queries para ajustar el diseño en pantallas grandes */
+                @media screen and (max-width: 1200px) {
+                  .swiper-wrapper {
+                    max-width: calc(50% - 10px);
+                  }
+                }
+
+                @media screen and (max-width: 600px) {
+                  .swiper-wrapper {
+                    max-width: calc(100% - 0px);
+                  }
+                }
+
+              
+
+
+
+/*
+            
               .swiper-wrapper {
                 width: 100%;
                 max-width: 640px;
               }
-      
+      */
       
               .swiper-button-next,
               .swiper-button-prev {
@@ -434,60 +460,88 @@ background-color: rgba(50,50,50,0.2);
 
 
 
-                .prod .d1 .buy{
+                .prod .d1 .agrega, .prod .d1 .quita, .prod .d1 .espera{
                 position: absolute;
-                    
-                height: 25px;
-                bottom: 0px;
+                font-weight: bold;
+                width: 61px;
+                bottom: 0px!important;
                 left: calc(50% - 68px);
                 background-color: rgba(50,50,50,0.05);
                 background-image: url('../images/buy.png');
                 background-size: 28px;
                 background-position: 4px 3px;
                 background-repeat: no-repeat;
-                padding: 8px 8px 0 35px;
+                padding: 8px 16px 8px 41px!important;
                 font-style: italic;
                 font-size:0.8em;
                 border-radius: 12px 12px 0 0;
                 z-index: 3;
                 text-decoration: none;
                 color:#45932F;
+                border: none;
+                position: absolute;
+                box-sizing: inherit;
+                display: none;
                 }
-                .prod .d1 .buy:focus{
+                 .prod .d1 .espera{
+                    background-color: rgba(50,50,50,0.2);
+                    text-align: center;
+                    opacity: 0.5;
+                 }
+                 .prod .d1 .quita{
+                 color: #932f3788;
+                }
+                .prod .d1 .agrega:focus, .prod .d1 .quita:focus{
                 background-color: rgba(50,50,50,0.1);
                 }
 
-                .prod .d1 .buy:hover{
+                .prod .d1 .agrega:hover, .prod .d1 .quita:hover{
                 background-color: rgba(50,50,50,0.2);
                 }
 
 
+
+
+
+
+
                       /* footer - redes sociales e informacion contacto */
 
-                      footer {
-                        background-color: #333;
-                        color: white;
-                        padding: 20px;
-                        text-align: center;
-                        /*position: fixed;*/
-                        position: relative;
-                        margin-top: 20px; /*  cualquier valor  */
+                                          
 
-                        width: 100%;
-                        bottom: 0;
+                    footer {
+                      
+                   
+                      background-color: #b5bdb5;
+                      
+                      color: #333531;
+                      padding: 2px;
+                      text-align: center;
+                      /*position: fixed;*/
+                      position: relative;
+                      margin-top: 20px; /*  cualquier valor  */
+
+                      width: 100%;
+                      bottom: 0;
+box-sizing: border-box;
+                     
                     }
-                    
+
+                                         
+
                     .footer-content {
                         display: flex;
                         justify-content: center;
+                        width: 90%; /* Ancho del contenido al 90% */
+                       margin: 0 auto; /* Centra el contenido horizontalmente */
                     }
                     
                     .column {
-                        margin: 0 20px;
+                        margin: 0 0px;
                     }
                     
                     .column h3 {
-                        color: #fff;
+                        color: #284903;
                     }
 
                     .column a {
@@ -498,6 +552,7 @@ background-color: rgba(50,50,50,0.2);
                   .column p a {
                     color: green; 
                     text-decoration: none; /* Elimina el subrayado */
+                    font-size: 80%;
                 }
                 
                     
@@ -514,12 +569,13 @@ background-color: rgba(50,50,50,0.2);
                     
                     .rights {
                         margin-top: 20px;
+                        font-size: 80%;
                     }
 
                     .whatsapp-icon {
                       position: fixed; /* Posición fija */
-                      bottom: 20px; /* Distancia desde la parte inferior */
-                      right: 20px; /* Distancia desde la derecha */
+                      bottom: 12px; /* Distancia desde la parte inferior */
+                      right: 12px; /* Distancia desde la derecha */
                       /*background-color: #25D366; /* Color de fondo del botón de WhatsApp */
                       padding: 10px; /* Espaciado interno */
                       border-radius: 50%; /* Para hacer un círculo */
@@ -544,3 +600,127 @@ background-color: rgba(50,50,50,0.2);
                       height: 32px;
                       margin-top: 10px; /* Ajusta el margen superior según tus necesidades */
                   }
+
+
+
+#carrito-info #info-carrito{
+position: fixed;
+    top: 118px;
+    right: 10px;
+    background-color: #E4FED9EE;
+    color: #fff;
+    padding: 7px;
+    border-radius: 0 0 18px 18px;
+    border: 2px solid #45932F;
+    color: #45932F;
+    font-size: 23px;
+    line-height: 15px;
+    text-align: right;
+    transition: 0.15s; 
+    z-index: 1;
+    display: none;
+}
+
+
+
+.titulito {
+    position: fixed;
+    top: 120px;
+    left: 5px;
+    background-color: #E4FED9EE;
+    color: #fff;
+    padding: 7px;
+    border-radius: 0 0 18px 18px;
+    border: 2px solid #45932F;
+    color: #45932F;
+    line-height: 15px;
+    text-align: right;
+    transition: 0.15s;
+    z-index: 2;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;}
+
+#carrito-info #info-carrito p{
+text-align: right;
+padding: 0;
+margin: 0;
+}
+#carrito-info #info-carrito t{
+    font-size: 15px;
+}
+#carrito-info #info-carrito p b{
+    width: 23px;
+    height: 21px;
+    margin-right: 5px;
+    display: inline-block;
+    background-image: url('../images/carrito.png');
+    background-size:contain;
+}
+
+
+
+
+/* Estilo para el contenedor que alberga las imágenes */
+.contenedor-imagenes {
+ 
+  display: flex; /* Utilizamos flexbox para alinear las imágenes */
+  flex-wrap: wrap; /* Permite que las imágenes se envuelvan cuando no hay suficiente espacio */
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/* Estilo para cada imagen */
+.imagen {
+  width: 70%; /* Achica el ancho del contenedor  */
+  max-width: 640px; /* Establece un ancho máximo para la imagen */
+  height: auto; /* Mantiene la proporción de aspecto de la imagen */
+  margin: 10px; /* Espaciado entre las imágenes */
+}
+
+
+/* Agrega reglas de estilo para la clase 'contenedor-imagenes' y la clase 'imagen' */
+.contenedor-imagenes a {
+  display: inline-block;
+  width: 72%; 
+}
+
+
+
+
+.titbebu {
+                display: inline-block;
+                color: #88A765;
+                background-color: #E9FCD6;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                
+              }
+
+
+              .prod.transp .d1 img,.prod.transp .d1 div div,.prod.transp .d1 c,.prod.transp .d1 b,.prod.transp .d2 d{
+
+opacity: 0.5;
+
+}
+
+.prod .d2{
+    
+  display: flex;
+  align-items: center;
+    text-decoration:none ;
+}
+.prod .d2 d{
+    margin: auto;
+    background-color: #E4FED9EE;    
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid #45932F;
+    color: #45932F;
+    transition: 0.15s;
+    font-size: 10px;
+    font-weight: normal;
+    text-decoration:none ;
+    display: none;
+}
+

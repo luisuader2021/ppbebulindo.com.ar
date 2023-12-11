@@ -74,9 +74,9 @@ if ($sinbus === 0) {
 ?>
              <div class='<? echo $producto[1]; ?> prod'>
                       <div class='d1'>
-                        <a href='../../img/<? echo $producto[1]; ?>.jpg' class='d2'></a>
+                        <a href='../../img/<? echo $producto[1]; ?>.jpg' class='d2'><d>QUITADO DEL CARRITO</d></a>
                         <img src='../../img/<? echo $producto[1]; ?>.jpg'/>
-                        <div class='info li'><? echo $producto[23]; ?><br>                        
+                        <div class='info li'><c><? echo $producto[23]; ?></c><br>                        
                           <div class='talle'><span>Talle: </span><? echo $producto[11]; ?></div>
                           <b><? echo $bcodbar; ?></b>
                           <div class='cod'>Art. <? echo $producto[22]; ?></div>                      
@@ -99,34 +99,22 @@ if ($sinbus === 1 or $vueltas === 0) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // Mostrar el total del carrito
-        $totalCarrito = array_sum(array_column($carrito, 'monto'));
-        echo '<p>Total del Carrito: $' . number_format($totalCarrito, 2) . '</p>';
-    } else {
-        echo '<p>El carrito está vacío.</p>';
-    }
+       
+    } 
     ?>
-<a href="javascript:history.back()">Volver</a>
+    <p class="totalC"></p>
+
+
+<a href="metododepago.php?monto=" class="finalizaC">Finalizar compra</a>
+
+
+<a class="volver" href="javascript:history.back()">Volver</a>
 
 <style>
-    
+    /*
     .prod{
         width: calc(50% - 4px);
-    }
+    }*/
 
 .prod .d1 .agrega, .prod .d1 .quita, .prod .d1 .espera {
     left: 0px;
@@ -145,8 +133,85 @@ if ($sinbus === 1 or $vueltas === 0) {
     padding: 7px 0 0 0;
     line-height: 17px;
 }
+.prod{
+    width: calc(50% - 4px);
+    vertical-align: middle !important;
+    clear: none !important;
+    float: none !important;
+    display: inline-block;
+    zoom: 1 !important;
+    box-sizing: border-box !important;
+    font-family: "Times new roman";
 
+}
+/* en 49 y 30 estaba*/
+@media screen and (min-width:600px) {
+ .prod{width: calc(33% - 4px);}
+}
+@media screen and (min-width:1200px) {
+ .prod{width: calc(25% - 4px);}
+}
+.prod .d2{
+    
+  display: flex;
+  align-items: center;
+    text-decoration:none ;
+}
+.prod .d2 d{
+    margin: auto;
+    background-color: #E4FED9EE;    
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid #45932F;
+    color: #45932F;
+    transition: 0.15s;
+    font-size: 10px;
+    font-weight: normal;
+    text-decoration:none ;
+}
 
+.totalC{
+    color: #45932F;
+    padding: 20px 0;
+    font-weight: bold;
+    margin: 0;
+}
+.finalizaC{
+    display: block;
+    font-weight: bold;
+    width: 200px;
+    margin: 20px auto;
+    background-color: rgba(50,50,50,0.05);
+    background-image: url(../images/buy.png);
+    background-size: 28px;
+    background-position: 18px center;
+    background-repeat: no-repeat;
+    padding: 8px 16px 8px 41px!important;
+    font-style: italic;
+    font-size: 23px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #45932F;
+    border: none;
+}
+.volver{
+    display: block;
+    font-weight: bold;
+    width: 200px;
+    margin: 20px auto;
+    background-color: rgba(50,50,50,0.05);
+    background-image: url(../images/volver.png);
+    background-size: 28px;
+    background-position: 18px center;
+    background-repeat: no-repeat;
+    padding: 8px 16px 8px 41px!important;
+    font-style: italic;
+    font-size: 23px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #45932F;
+    border: none;
+}
 
 </style>
 
@@ -154,6 +219,7 @@ if ($sinbus === 1 or $vueltas === 0) {
 <script>
  function agregarAlCarrito(id, nombre, monto) {
             // Realizar una solicitud AJAX al servidor
+            
             $.ajax({
                 type: 'POST',
                 url: '../../tienda/includes/carrito/modificar_carrito.php',
@@ -165,6 +231,7 @@ if ($sinbus === 1 or $vueltas === 0) {
                 },
                 success: function(response) {
                     actualizarBotonesCarrito(id);
+                    $('.prod.'+id).removeClass('transp');
                 },
                 error: function(error) {
                     console.error('Error al agregar al carrito:', error);
@@ -183,6 +250,8 @@ if ($sinbus === 1 or $vueltas === 0) {
                 },
                 success: function(response) {
                     actualizarBotonesCarrito(id);
+                    $('.prod.'+id).addClass('transp');
+            
                 },
                 error: function(error) {
                     console.error('Error al quitar del carrito:', error);
@@ -211,19 +280,23 @@ if ($sinbus === 1 or $vueltas === 0) {
                       var idProducto = $(this).attr('class').split(' ')[0]; // Obtener el ID del producto del nombre de la clase
                       var botonAgrega = $(this).find('.agrega');
                       var botonQuita = $(this).find('.quita');
+                      var quitado = $(this).find('.d2 d');
 
                       // Verificar si el producto está en el carrito
                       var estaEnCarrito = response.some(function(producto) {
                         return producto.id === idProducto;
+
                       });
 
                       // Mostrar el botón correspondiente
                       if (estaEnCarrito) {
                         botonAgrega.hide(); // Ocultar botón de agregar
                         botonQuita.show(); // Mostrar botón de quitar
+                        quitado.hide();
                       } else {
                         botonAgrega.show();
                         botonQuita.hide();
+                        quitado.show();
                       }
                     
                     });
@@ -235,9 +308,20 @@ if ($sinbus === 1 or $vueltas === 0) {
                     
 
                     var sumaTotal = response.reduce((acumulador, producto) => acumulador + parseFloat(producto.monto), 0);
-                    if(sumaTotal>0){$('#info-carrito').show();}else{$('#info-carrito').hide();}
+                    if(sumaTotal>0){
+                        $('#info-carrito').show();
+                        $('.totalC').html("Total del carrito: " + sumaTotal.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' }));
+                        $('.finalizaC').attr('href','metododepago.php?monto='+sumaTotal);
+                        $('.finalizaC').show();
+                    }else{
+                        $('#info-carrito').hide();
+                        $('.totalC').html("Sin productos en el carrito");
+                        $('.finalizaC').hide();
+                    }
                     // Actualizar la burbuja con la información
-                    $('#info-carrito').html('<p><b></b>' + cantidadProductos + '</p> <t>$' + sumaTotal.toFixed(0)+'</t>');
+                    $('#info-carrito').html('<p><b></b>' + cantidadProductos + '</p> <t>$' + sumaTotal.toLocaleString('es-AR', { maximumFractionDigits: 0 })+'</t>');
+                   
+                    
                    },
                 error: function(error) {
                     console.error('Error al actualizar botones del carrito:', error);
@@ -252,6 +336,8 @@ if ($sinbus === 1 or $vueltas === 0) {
 <div id="carrito-info">
     <span id="info-carrito"><b></b></span>
 </div>
+
+
 
 <h3 class='titulito'>CARRITO DE COMPRAS</h3>
 
